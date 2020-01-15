@@ -8,7 +8,21 @@ CREATE TABLE books
     isbn  VARCHAR(200)
 );
 
+INSERT INTO
+books
+VALUES(1,"Design of UNIX OS","Stroustrop","OS",200,"0-7645-26413");
 
+INSERT INTO
+books
+VALUES(2,"C++ Programming Language","Stroustrop","C++",300,"0-7645-26414");
+
+INSERT INTO
+books
+VALUES(3,"C Programming Language","Stroustrop","C",500,"0-7645-26415");
+
+INSERT INTO
+books
+VALUES(4,"Complete Referance-JAVA","Stroustrop","JAVA",700,"0-7645-26416");
 
 CREATE TABLE users
 (
@@ -19,6 +33,22 @@ CREATE TABLE users
     password VARCHAR(100),
     role VARCHAR(50)
 );
+
+INSERT INTO 
+users
+VALUES(1,"Prasad Bhise","prasad@gmail.com","9096125246","prasad","User");
+
+INSERT INTO 
+users
+VALUES(2,"Arti Bokse","arti@gmail.com","7276660303","arti","User");
+
+INSERT INTO 
+users
+VALUES(3,"Sripad Malekar","sripad@gmail.com","9890856107","sripad","Librarian");
+
+INSERT INTO 
+users
+VALUES(4,"Akash Suryawanshi","akash@gmail.com","9271371471","akash","Admin");
 
 CREATE TABLE payments
 (
@@ -41,6 +71,39 @@ CREATE TABLE copies
     CONSTRAINT FK_copies_bookid FOREIGN KEY (bookid)
     REFERENCES books(id)
 );
+
+INSERT INTO
+copies
+VALUES(1,1,1,"available");
+
+INSERT INTO
+copies
+VALUES(2,1,1,"available");
+
+INSERT INTO
+copies
+VALUES(3,2,2,"available");
+
+INSERT INTO
+copies
+VALUES(4,2,2,"available");
+
+INSERT INTO
+copies
+VALUES(5,3,3,"available");
+
+INSERT INTO
+copies
+VALUES(6,3,3,"available");
+
+
+INSERT INTO
+copies
+VALUES(7,4,4,"available");
+
+INSERT INTO
+copies
+VALUES(8,4,4,"available");
 
 CREATE TABLE issuerecord
 (
