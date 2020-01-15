@@ -33,7 +33,15 @@ router.get('/:bookid',(request,response)=>{
         response.send(utils.createResult(error,data))
     })
 })
-
+router.get('/subject/sub',(request,response)=>{
+    const {subject} = request.params
+    const connection =db.connect()
+     const statement=`select b.subject,count(bookid)from copies c inner join books b on b.id=c.bookid group by subject`
+    connection.query(statement,(error,data)=>{
+        connection.end()
+        response.send(utils.createResult(error,data))
+    })
+})
 router.put('/issue/:id',(request,response)=>{
     const {id} = request.params
     
